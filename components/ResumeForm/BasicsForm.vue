@@ -81,7 +81,3 @@ const removeProfile = (index: number) => {
     emit('update:modelValue', basics.value);
 };
 </script>
-
-<style scoped>
-/* You can add scoped styles here if needed */
-</style>
