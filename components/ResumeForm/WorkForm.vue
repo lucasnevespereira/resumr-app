@@ -1,29 +1,26 @@
 <template>
     <div>
-        <h2>Work Experiences</h2>
-        <div v-for="(work, index) in works" :key="index" class="work-item">
-            <el-row :gutter="10">
-                <el-col :span="6">
-                    <el-input v-model="work.position" @input="updateValue" placeholder="Position"></el-input>
-                </el-col>
-                <el-col :span="6">
-                    <el-input v-model="work.company" @input="updateValue" placeholder="Company"></el-input>
-                </el-col>
-                <el-col :span="4">
-                    <el-input v-model="work.startDate" @input="updateValue" placeholder="Start Date (e.g., Jan 2020)"></el-input>
-                </el-col>
-                <el-col :span="4">
-                    <el-input v-model="work.endDate" @input="updateValue" placeholder="End Date (e.g., Dec 2022)"></el-input>
-                </el-col>
-                <el-col :span="4">
-                    <el-input v-model="work.summary" @input="updateValue" placeholder="Summary"></el-input>
-                </el-col>
-                <el-col :span="2">
-                    <el-button @click="removeWork(index)" type="danger">Remove</el-button>
-                </el-col>
-            </el-row>
-        </div>
-        <el-button @click="addWork" type="success" class="add-button">Add Work Experience</el-button>
+        <el-form label-position="top" v-for="(work, index) in works" :key="index" class="work-item">
+            <el-form-item label="Position">
+                <el-input v-model="work.position" @input="updateValue" placeholder="Position"></el-input>
+            </el-form-item>
+            <el-form-item label="Company">
+                <el-input v-model="work.company" @input="updateValue" placeholder="Company"></el-input>
+            </el-form-item>
+            <el-form-item label="Start Date (e.g., Jan 2020)">
+                <el-input v-model="work.startDate" @input="updateValue" placeholder="Start Date"></el-input>
+            </el-form-item>
+            <el-form-item label="End Date (e.g., Dec 2022)">
+                <el-input v-model="work.endDate" @input="updateValue" placeholder="End Date"></el-input>
+            </el-form-item>
+            <el-form-item label="Summary">
+                <el-input v-model="work.summary" @input="updateValue" placeholder="Summary"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button @click="removeWork(index)" type="danger">Remove</el-button>
+            </el-form-item>
+        </el-form>
+        <el-button @click="addWork" class="add-button">Add Work Experience</el-button>
     </div>
 </template>
 
