@@ -2,5 +2,8 @@
 
 
 export default defineNuxtConfig({
+  modules: [
+    '@element-plus/nuxt'
+  ],
   devtools: { enabled: true },
 })

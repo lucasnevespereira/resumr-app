@@ -29,7 +29,7 @@ const copyToClipboard = () => {
     <div class="form-container">
       <BasicsForm v-model="formData.basics" />
       <WorkForm v-model="formData.work" />
-      <button @click="submitForm">Submit</button>
+      <el-button @click="submitForm">Submit</el-button>
     </div>
 
     <div class="json-container">
